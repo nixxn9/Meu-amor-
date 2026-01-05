@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pra Voce, Meu Amor</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  color:#ffffff;
+  overflow-x:hidden;
+}
+
+/* CORACOES */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:18px;
+  animation:float 6s linear infinite;
+  opacity:0.8;
+}
+
+@keyframes float{
+  0%{transform:translateY(0); opacity:0;}
+  20%{opacity:1;}
+  100%{transform:translateY(-110vh); opacity:0;}
+}
+
+/* LOGIN */
+#login{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  z-index:10;
+}
+
+.login-box{
+  background:rgba(255,255,255,0.25);
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  width:90%;
+  max-width:320px;
+}
+
+.login-box input{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  margin-top:10px;
+  text-align:center;
+}
+
+.login-box button{
+  width:100%;
+  margin-top:18px;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#ffffff;
+  cursor:pointer;
+  font-size:16px;
+}
+
+/* SITE */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+  display:none;
+}
+
+.card{
+  background:rgba(255,255,255,0.22);
+  border-radius:25px;
+  padding:28px;
+  margin-bottom:25px;
+}
+
+h1,h2{
+  text-align:center;
+}
+
+p{
+  font-size:17px;
+  line-height:1.7;
+  text-align:center;
+}
+
+.btn-surpresa{
+  background:#ffffff;
+  color:#ff758c;
+  border:none;
+  padding:14px;
+  width:100%;
+  border-radius:14px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.footer{
+  text-align:center;
+  font-size:14px;
+  opacity:0.85;
+  margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="login-box">
+    <h2>So pra voce 💖</h2>
+    <p>Se voce sabe a senha,<br>e porque e voce.</p>
+    <input type="password" id="senha" placeholder="0809">
+    <button onclick="entrar()">Entrar</button>
+    <p id="erro"></p>
+  </div>
+</div>
+
+<!-- SITE -->
+<div class="container" id="site">
+
+<div class="card">
+<h1>Oi, meu amor 💖</h1>
+<p>
+Eu fiz esse site so pra voce.<br>
+Cada palavra aqui guarda um pedacinho do que eu sinto por nos.
+</p>
+</div>
+
+<div class="card">
+<h2>Onde tudo comecou</h2>
+<p>Nossa primeira vez que nois saiu foi na quadra.</p>
+<p>Eu todo nervoso, com a mao toda boba.</p>
+<p>Sem querer, acabei batendo varias vezes na sua bunda.</p>
+<p>Tudo meio sem jeito, mas cheio de sentimento.</p>
+<p>E quando nois foi embora da quadra, eu peguei no seu pescoco kkkkk.</p>
+<p>Ali meu coracao ja tinha certeza que era voce.</p>
+</div>
+
+<div class="card">
+<h2>Nossos momentos</h2>
+<p>Eu nunca vou esquecer das nossas risadas.</p>
+<p>Do dia que a Bella me chamou de tio na piscina.</p>
+<p>Eu fiquei feliz demais, mesmo nao demonstrando muito.</p>
+<p>Mas por dentro meu coracao tava explodindo de alegria.</p>
+</div>
+
+<div class="card">
+<h2>Abracos e beijinhos</h2>
+<p>Eu amo nossos abracos fofinhos.</p>
+<p>Aquele abraco apertado que parece que o mundo some.</p>
+<p>E amo nosso comprimento de selinho kkkkkk.</p>
+<p>Simples, bobo, mas so nosso.</p>
+</div>
+
+<div class="card">
+<h2>Nossos primeiros beijos</h2>
+<p>Meu primeiro beijo foi na esquina da minha casa.</p>
+<p>Eu tava morrendo de vergonha.</p>
+<p>Depois veio nosso primeiro beijo de lingua sem lingua kkkkkk.</p>
+<p>Todo nervosinho, todo desengoncado.</p>
+<p>Mas perfeito, porque foi com voce.</p>
+</div>
+
+<!-- TEXTO FOFINHO NO LUGAR DAS FOTOS -->
+<div class="card">
+<h2>Nos 💖</h2>
+<p>
+Vida, você é a melhor parte dos meus dias. Amor, meu coração fica em paz só de pensar em você.
+BB, você me faz sorrir até nos dias mais difíceis, e neném, tudo fica melhor quando eu tô do seu lado.
+Você é meu apoio, minha alegria e meu maior motivo pra ser feliz.
+Eu te amo mais do que palavras conseguem explicar e mais do que qualquer coisa nesse mundo.
+</p>
+</div>
+
+<div class="card">
+<h2>Uma surpresa pra voce 💌</h2>
+<button class="btn-surpresa" onclick="surpresa()">Clica aqui</button>
+</div>
+
+<div class="footer">
+Feito com amor, por Kainan, so pra Isabelle 💕
+</div>
+
+</div>
+
+<script>
+function entrar(){
+  var senha = document.getElementById("senha").value;
+  if(senha === "0809"){
+    document.getElementById("login").style.display = "none";
+    document.getElementById("site").style.display = "block";
+    iniciarCoracoes();
+  } else {
+    document.getElementById("erro").innerText = "Senha incorreta 😢";
+  }
+}
+
+function surpresa(){
+  alert("Eu te amo mais do que consigo explicar.\nObrigado por ser minha namorada 💖");
+}
+
+function iniciarCoracoes(){
+  setInterval(()=>{
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = (4 + Math.random()*4) + "s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+  },500);
+}
+</script>
+
+</body>
+</html>
